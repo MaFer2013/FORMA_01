@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMA_01</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="intro-active">
+    <main id="game-shell">
+      <canvas id="game-canvas"></canvas>
+
+      <section id="hud" aria-label="Interfaz de juego">
+        <div class="hud-brand">
+          <span class="hud-kicker">Jardin de Ecos</span>
+          <h1 aria-label="FORMA_01">
+            <span aria-hidden="true">F</span>
+            <span class="title-orb hud-title-orb" aria-hidden="true"><i></i><i></i></span>
+            <span aria-hidden="true">RMA_01</span>
+          </h1>
+        </div>
+        <button id="volume-toggle-hud" class="icon-button" data-volume-toggle aria-pressed="false" aria-label="Silenciar o activar musica">
+          <!-- Inline SVG so color can be controlled with CSS -->
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" height="20" width="20" aria-hidden="true">
+            <path d="M3 9v6h4l5 4V5L7 9H3z" />
+            <path d="M16.5 12c0-1.77-.77-3.36-2-4.47v8.94c1.23-1.11 2-2.7 2-4.47z" />
+            <path d="M19 12c0 2.5-1.5 4.69-3.5 5.74l-.99-1.73C16.02 15.7 17 14 17 12s-.98-3.7-2.49-4.99L15.5 5.3C17 6.31 19 8.74 19 12z" />
+          </svg>
+        </button>
+
+        <div class="hud-stats">
+          <div>
+            <span>Tiempo</span>
+            <strong id="timer-value">1:00</strong>
+          </div>
+          <div>
+            <span>Estado</span>
+            <strong id="state-value">Latente</strong>
+          </div>
+          <div>
+            <span>Absorbidos</span>
+            <strong id="absorbed-value">0/2</strong>
+          </div>
+        </div>
+      </section>
+
+      <div id="interaction" class="hidden">Presiona E para absorber</div>
+      <div id="narrative" class="hidden"></div>
+
+      <section id="decision" class="hidden" aria-modal="true" role="dialog">
+        <div class="decision-panel">
+          <span>Esencia encontrada</span>
+          <h2 id="decision-title">Has encontrado una esencia</h2>
+          <p id="decision-copy">Toda eleccion modifica la forma.</p>
+          <div class="decision-actions">
+            <button id="absorb-button" type="button">Absorber</button>
+            <button id="ignore-button" class="secondary" type="button">Ignorar</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="guardian-dialog" class="hidden" aria-modal="true" role="dialog">
+        <div class="guardian-panel">
+          <span id="guardian-reading">Lectura de la forma</span>
+          <h2>Guardian del Vacio</h2>
+          <p id="guardian-copy"></p>
+          <button id="guardian-continue" type="button">Abrir el umbral</button>
+        </div>
+      </section>
+
+      <section id="intro" aria-label="Portada de FORMA_01">
+        <button id="volume-toggle-intro" class="volume-toggle" data-volume-toggle type="button" aria-label="Silenciar musica" title="Silenciar musica">
+          <span data-volume-icon aria-hidden="true">&#128266;</span>
+        </button>
+        <header class="intro-title">
+          <span class="intro-kicker">Jardin de Ecos</span>
+          <h2 aria-label="FORMA_01">
+            <span aria-hidden="true">F</span>
+            <span class="title-orb" aria-hidden="true"><i></i><i></i></span>
+            <span aria-hidden="true">RMA_01</span>
+          </h2>
+          <p>La identidad no se descubre.<br />Se construye con decisiones.</p>
+        </header>
+        <div class="intro-actions">
+          <button id="start-button" type="button" disabled>Cargando formas...</button>
+        </div>
+      </section>
+
+      <section id="ending" class="hidden" aria-live="polite">
+        <div class="ending-panel">
+          <span id="ending-type">Final</span>
+          <h2 id="ending-title">FORMA_01</h2>
+          <p id="ending-copy"></p>
+          <button id="restart-button" type="button">Reiniciar</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

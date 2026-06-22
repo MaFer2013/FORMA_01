@@ -1,0 +1,6 @@
+<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="Volume-Icon" height="24" width="24" role="img" aria-label="Volumen">
+  <title>Volumen</title>
+  <path d="M3 9v6h4l5 4V5L7 9H3z" />
+  <path d="M16.5 12c0-1.77-.77-3.36-2-4.47v8.94c1.23-1.11 2-2.7 2-4.47z" />
+  <path d="M19 12c0 2.5-1.5 4.69-3.5 5.74l-.99-1.73C16.02 15.7 17 14 17 12s-.98-3.7-2.49-4.99L15.5 5.3C17 6.31 19 8.74 19 12z" />
+</svg>
